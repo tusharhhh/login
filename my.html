@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tushar.com</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        :root{
+            --background-color: rgb(255, 235, 235);
+            --text-color:#292929;
+            --titel-color: rgb(0, 238, 255);
+            --nave-color: #669566;
+            --sesion-color:rgb(255, 255, 255);
+            --shadoe-color:rgb(128, 128, 128);
+            --second-text-color:rgb(71, 120, 255);
+            --color:liner-gradint(yellow,black);
+        }
+        body{
+            margin: 0;
+            background-color: var(--color);
+        }.header{
+            height: 100%;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+            margin-right: 0;
+        }
+        .nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 40px;
+            margin-right: 0;
+            padding: 20px 50px;
+        }
+        .li{
+            color: var(--text-color);
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'arial';
+            
+        }
+        .title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'arial';
+            padding: 10px;
+        }
+        .tb{
+            margin-left: 50px;
+            margin-top: 21px;
+
+        }
+        .hello{
+            margin-top:20px ;
+            margin-left: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 5px solid rgba(128, 128, 128, 0);
+            padding: 10px;
+            border-top:5px solid gray;
+            animation: spin 1s linear infinite;
+            position: absolute;
+        }
+        @keyframes spin{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        .navbar{
+            height: 100%;
+            width: 0;
+            position:fixed;
+            top: 0;
+            right: 0;
+            background-color: transparent;
+            backdrop-filter: blur(6px);
+            overflow-x: hidden;
+            transition: 0.5s;
+            border: 1px solid gray;
+
+        }
+        a{
+            padding: 20px 8px 8px ;
+            text-decoration: none;
+            display: flex;
+            color: var(--text-color);
+            display: flex;
+            transition: 0.3s;
+            font-weight: bold;
+
+        }
+        a:hover{
+            color:var(--second-text-color);
+        }
+        .bi-x-lg:hover{
+            color: #ff0000;
+        }
+        .v{
+            padding: 20px 8px 8px ;
+            text-decoration: none;
+            display: flex;
+            color: var(--text-color);
+            display: flex;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        v:hover{
+            color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="title">
+                <span class="tb">TB</span>
+                <div class="hello"></div>
+            </div>
+            <nav>
+                <div class="nav">
+                    <div class="li">Home</div>
+                    <div class="li">About</div>
+                    <div class="li">Contact</div>
+                    <div class="li">Log in</div>
+                    <div class="li"><span class="bi bi-list" id="open" onclick="toggleMenu()"></span></div>
+                </div>
+                <div class="navbar" id="close">
+                    <div class="v">
+                        <span class="bi bi-x-lg" onclick="Menu()"></span>
+                    </div>
+                    <a href="">Home</a>
+                    <a href="">About</a>
+                    <a href="">Contact</a>
+                    <a href="">Log in</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <script>
+           function toggleMenu() {
+            const navbar = document.getElementById("close");
+            navbar.style.width="250px";
+            navbar.style.padding="60px 20px";
+            
+         
+
+        }
+        function Menu(){
+            const navbar = document.querySelector(".navbar");
+            navbar.style.width="0";
+            navbar.style.padding="0";
+        }
+
+
+    </script>
+    
+</body>
+</html>
